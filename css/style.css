@@ -30,14 +30,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #7B2A3B;
 
 }
 
 #logo {
-    font-size: 2.5rem;
-    padding: 1rem 1rem 1rem 25rem;
+    font-size: 2rem;
+    padding: 1rem 1rem 1rem 1rem;
+    align-self: center;
     color: #F8C58C;
 }
 
@@ -46,16 +47,41 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    padding: 1rem 25rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    justify-content: space-around;
 }
 
 .navItem{
-    padding: 1rem;
+    position: relative;
+    margin: 0.2rem 1rem;
+    padding-bottom: 0.3rem;
     font-size: 1rem;
     text-decoration: none;
     color: #F8C58C;
     font-size: 1.2rem;
 }
+/*Link underline animation START*/
+.navItem:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #F8C58C;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.navItem:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}    /*Link underline animation STOPP*/
+
 
 #container{
     display: flex;
@@ -80,10 +106,11 @@ body {
    
 }
 .contentText {
+    font-family: 'Open Sans', sans-serif;
     width: 50%;
     font-size: 1.1rem;
     align-self: center;
-    margin-left: 0rem;
+    line-height: 30px;
 }
 /*#contentTop{
 }
@@ -99,6 +126,10 @@ body {
     margin: 1rem;
     border-radius: 10px;
 }
+.bannerResponsive {
+    height: auto;
+    width: 100%;
+}
 .imageResponsive {
     height: 100%;
     width: auto;
@@ -109,7 +140,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
         
     border: 1px solid black;
     background-color: #7B2A3B;
@@ -120,11 +151,11 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1rem 25rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
 }
 
 .icon {
-    padding-left: 1rem;
+    padding-right: 1rem;
     height: 64px;
     width: 64px;
 }
